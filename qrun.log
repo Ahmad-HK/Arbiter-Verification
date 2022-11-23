@@ -1,0 +1,178 @@
+QuestaSim-64 qrun 2021.1 Utility 2021.01 Jan 19 2021
+Start time: 16:25:52 on Nov 23,2022
+qrun -c testbench.sv 
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+Start time: 16:25:52 on Nov 23,2022
+vlog testbench.sv -work qrun.out/work -csession=incr -writesessionid "+qrun.out/top_dus" -statslog qrun.out/stats_log 
+-- Compiling package testbench_sv_unit
+** Warning: generator.sv(30): (vlog-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
+** Warning: enviroment.sv(64): (vlog-2240) Treating stand-alone use of function 'reference' as an implicit VOID cast.
+-- Compiling interface intf
+-- Compiling program test
+-- Compiling module ArbFixedPriorityAbs
+-- Compiling module tbench_top
+
+Top level modules:
+	tbench_top
+End time: 16:25:52 on Nov 23,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 2
+QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+Start time: 16:25:52 on Nov 23,2022
+vopt -findtoplevels c:/questasim64_2021.1/projects/Arbiter/qrun.out/work+12+ -work qrun.out/work -statslog qrun.out/stats_log -o qrun_opt_2 
+
+Top level modules:
+	tbench_top
+
+Analyzing design...
+-- Loading module tbench_top
+-- Loading interface intf
+-- Loading program test
+-- Loading module ArbFixedPriorityAbs
+Optimizing 6 design-units (inlining 2/4 module instances):
+-- Optimizing package testbench_sv_unit(fast)
+** Warning: generator.sv(30): (vopt-2240) Treating stand-alone use of function 'randomize' as an implicit VOID cast.
+** Warning: enviroment.sv(64): (vopt-2240) Treating stand-alone use of function 'reference' as an implicit VOID cast.
+** Warning: RefMod.sv(20): (vopt-2250) Function "reference" has no return value assignment.
+-- Inlining interface intf(fast__2)
+-- Inlining module ArbFixedPriorityAbs(fast)
+-- Optimizing module tbench_top(fast)
+-- Optimizing program test(fast)
+-- Optimizing interface intf(fast)
+Optimized design name is qrun_opt_2
+End time: 16:25:53 on Nov 23,2022, Elapsed time: 0:00:01
+Errors: 0, Warnings: 3
+# vsim -c -lib qrun.out/work -do "run -all; quit -f" -statslog qrun.out/stats_log qrun_opt_2 -appendlog -l qrun.log 
+# Start time: 16:26:01 on Nov 23,2022
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.testbench_sv_unit(fast)
+# Loading work.tbench_top(fast)
+# Loading work.test(fast)
+# Loading work.intf(fast)
+# ** Warning: (vsim-3764) Stand-alone call to function 'try_get' treated as implicit void cast.
+#    Time: 0 ps  Iteration: 0  Region: /testbench_sv_unit File: RefMod.sv Line: 28
+# ** Warning: (vsim-3764) Stand-alone call to function 'try_put' treated as implicit void cast.
+#    Time: 0 ps  Iteration: 0  Region: /testbench_sv_unit File: RefMod.sv Line: 45
+# run -all
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 8 ,and Expected = 8   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 4 ,and Expected = 4   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 8 ,and Expected = 8   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 8 ,and Expected = 8   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 8 ,and Expected = 8   
+# PASS! when Actual = 4 ,and Expected = 4   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 4 ,and Expected = 4   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 2 ,and Expected = 2   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 0 ,and Expected = 0   
+# PASS! when Actual = 1 ,and Expected = 1   
+# PASS! when Actual = 1 ,and Expected = 1   
+# ** Note: $finish    : testbench.sv(33)
+#    Time: 1 ns  Iteration: 0  Instance: /tbench_top
+# End time: 16:26:14 on Nov 23,2022, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   2
+#     vopt: Errors:   0, Warnings:   3
+#     vsim: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   7
